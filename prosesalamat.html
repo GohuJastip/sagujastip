@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informasi Alamat</title>
+    <style>
+        /* Mengimpor font Roboto dari Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+        /* Mengatur tampilan body */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000; /* Mengganti background menjadi #f6647e */
+            color: #fff; /* Teks putih */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #f6647e; /* Warna navbar */
+        }
+
+        .navbar a {
+            color: #fff;
+            margin: 0 4px;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+
+        .logo {
+            width: 55px;
+            height: 50px;
+            margin-right: 20px;
+        }
+
+        /* Kontainer Instruksi */
+        .instruction {
+            padding: 15px;
+            color: white;
+            text-align: center;
+            font-size: 16px;
+            margin: 20px auto;
+            border-radius: 8px;
+            max-width: 800px;
+            background-color: transparent; /* Menghapus latar belakang pink */
+        }
+
+        /* Layar Ponsel */
+        .phone-screen {
+            background-color: #222;
+            width: 90%;
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Info Box */
+        .info-box {
+            font-size: 14px;
+        }
+
+        .info-box p {
+            margin: 10px 0;
+        }
+
+        .info-box strong {
+            color: #f6647e;
+        }
+
+        .info-box span {
+            color: #ff8da1;
+        }
+
+        /* Tombol Kembali */
+        .back-button {
+            background-color: #f6647e;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+
+        .back-button:hover {
+            background-color: #ff8da1;
+        }
+
+        /* Form Input */
+        .form-container {
+            background-color: #333;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .form-container input {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: none;
+            width: 80%;
+            font-size: 16px;
+        }
+
+        .form-container button {
+            background-color: #f6647e;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .form-container button:hover {
+            background-color: #ff8da1;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #f6647e; /* Mengubah background footer */
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 12px;
+            margin-top: auto;
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- Navbar dengan logo SGG -->
+    <div class="navbar">
+        <img src="SG.png" alt="Logo SGG" class="logo" />
+    </div>
+
+    <!-- Menambahkan keterangan instruksi copypaste di luar phone-screen -->
+    <div class="instruction">
+        Silakan copypaste untuk mengedit alamat teman-teman. Ikuti sesuai alamat dibawah ini
+        agar tidak terjadi kesalahan. Bisa digunakan untuk alamat di Shopee, Tokopedia, TikTok, dan platform lainnya!
+    </div>
+
+    <div class="phone-screen">
+        <div class="info-box">
+            <!-- Menampilkan informasi kontak -->
+            <p><strong>Nama Lengkap </strong><br><span id="displayKontak">Loading...</span></p>
+            <p><strong>Nomor Telepon </strong><br>081244801294</p>
+            <p><strong>Provinsi, Kota, Kecamatan, Kode Pos:</strong><br>DKI JAKARTA<br>KOTA JAKARTA TIMUR<br>CILILITAN<br>13640</p>
+            <p><strong>Nama Jalan, Gedung, No. Rumah </strong><br>Gohujastip Kontrakan oren, Gg. Alisarbi Cililitan 13640 RT.08 RW.09 No. 11A (GH0 <span id="displayNama">Nama</span> <span id="displayWA">Nomor WA</span>)</p>
+        </div>
+    </div>
+
+    <script>
+        // Mengambil data nama dan WA dari localStorage
+        var nama = localStorage.getItem("nama") || "Data tidak ditemukan";
+        var wa = localStorage.getItem("wa") || "Data tidak ditemukan";
+
+        // Menampilkan data pada elemen HTML
+        document.getElementById("displayKontak").textContent = "GH0 " + nama + " " + wa;
+        document.getElementById("displayNama").textContent = nama;
+        document.getElementById("displayWA").textContent = wa;
+
+        // Menangani event untuk tombol "Ubah Alamat"
+        document.querySelector(".change-address-btn").addEventListener("click", function() {
+            alert("Fitur Ubah Alamat sedang dalam pengembangan!");
+        });
+    </script>
+
+    <!-- Footer dengan keterangan copyright -->
+    <footer>
+        © 2024 Sagu Jastip By. Dhani Mochtar
+    </footer>
+</body>
+
+</html>
