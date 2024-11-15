@@ -7,52 +7,82 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 10px; /* Mengurangi margin body */
-            background-color: #fef0f5; /* Latar belakang yang lembut */
+            margin: 0;
+            background-color: #000000; /* Latar belakang hitam */
+            color: white;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+        header {
+            background-color: #f6647e;
+            padding: 20px 10px;
+            color: white;
+            font-size: 24px; /* Ukuran font "Cek Paket" lebih kecil */
+            font-weight: bold; /* Membuat tulisan bold */
+            position: relative;
+            text-align: center;
+        }
+        header .logo {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 55px;
+            height: 50px;
+        }
+        footer {
+            background-color: #f6647e;
+            text-align: center;
+            padding: 10px;
+            color: white;
+            font-size: 12px; /* Ukuran font lebih kecil di footer */
+        }
+        .container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        .container p {
+            font-size: 16px; /* Ukuran font untuk "Data di bawah ..." lebih kecil */
+            margin-bottom: 20px;
         }
         table {
-            width: 60%; /* Memperbesar lebar tabel menjadi 60% */
+            width: 60%;
             border-collapse: collapse;
-            margin: 10px auto; /* Menambahkan margin otomatis agar tabel lebih rapat */
-            border: 1px solid #f6647e; /* Garis tepi luar tabel lebih tipis */
+            border: 1px solid #f6647e;
         }
         th, td {
-            padding: 3px; /* Mengurangi padding lebih banyak */
-            text-align: center; /* Menyusun teks agar berada di tengah */
-            border: 1px solid #f6647e; /* Garis tepi untuk setiap sel */
-            font-size: 11px; /* Mengurangi ukuran font lebih kecil */
+            padding: 8px;
+            text-align: center;
+            border: 1px solid #f6647e;
+            font-size: 14px;
+            color: black;
         }
         th {
-            background-color: #f6647e; /* Latar belakang header tabel dengan warna dominan */
-            color: white; /* Warna teks header menjadi putih */
-        }
-        td {
-            background-color: #fff0f5; /* Latar belakang sel tabel yang lebih terang */
-        }
-        h1 {
-            text-align: center;
-            color: #f6647e; /* Warna judul dengan warna dominan */
-            font-size: 28px; /* Memperkecil ukuran font judul */
-            margin-bottom: 5px; /* Mengurangi margin bawah pada h1 */
-        }
-        p {
-            text-align: center;
-            font-size: 14px; /* Memperkecil ukuran font untuk teks paragraf */
-            color: #000; /* Mengubah warna teks menjadi hitam */
-            font-weight: bold;
-            margin-top: 0; /* Mengurangi margin atas pada p */
+            background-color: #f6647e;
+            color: white;
         }
         tr:nth-child(even) {
-            background-color: #ffd6e8; /* Warna baris genap lebih terang */
+            background-color: #ffffff; /* Latar belakang putih untuk baris genap */
+        }
+        tr:nth-child(odd) {
+            background-color: #f8d6e2; /* Latar belakang pink muda untuk baris ganjil */
         }
         tr:hover {
-            background-color: #ffb3d9; /* Efek hover untuk baris tabel */
+            background-color: #ffd6e8; /* Latar belakang pink lebih terang saat hover */
         }
     </style>
 </head>
 <body>
-    <h1>Cek Paket</h1>
+    <header>
+        <img src="SG.png" alt="Logo SG" class="logo"> <!-- Logo di pojok kiri, sedikit ke kanan -->
+        Cek Paket
+    </header>
 
+    <div class="container">
     <p>Data di bawah adalah paket yang telah tiba di lokasi jastip</p>
 
     <table>
@@ -286,6 +316,10 @@
             </tr>
         </tbody>
     </table>
+ </div>
 
+    <footer>
+        ©2024 Sagu Jastip By. Dhani Mochtar
+    </footer>
 </body>
 </html>
